@@ -1,1 +1,24 @@
-/home/wisetrem/.conkyrc
+background no
+format_human_readable yes
+out_to_console yes
+total_run_times 0
+update_interval 0.5
+use_spacer right
+cpu_avg_samples 2
+net_avg_samples 2
+default_color white
+pad_percents 1
+short_units yes
+
+ TEXT
+ echo -n '^fg(\#268bd2)DISK^p(3)^fg()${diskio sda}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)DL^p(3)^fg()${downspeed eno1}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)UP^p(3)^fg()${upspeed eno1}^p(3):^p(3)'
+ echo -ne '^fg(\#268bd2)TEMP^p(3)^fg()${hwmon 0 temp 1}^p(-8)\xc2\xb0C^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)^ca(1,/home/wisetrem/Yandex.Disk/Scripts/Dzen/SysinfoPopup.sh)SYS^ca()^fg()^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)/^p(3)^fg()${execi 60 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Space.sh ROOT}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)DS^p(3)^fg()${execi 60 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Space.sh DS}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)CPU^p(3)^fg()${execi 1 /home/wisetrem/Yandex.Disk/Scripts/Dzen/CPU.sh}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)MEM^p(3)^fg()${execi 1 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Mem.sh}^p(3):^p(3)'
+ echo -n '^fg(\#268bd2)SWP^p(3)^fg()${execi 1 /home/wisetrem/Yandex.Disk/Scripts/Dzen/SWP.sh}^p(3):^p(3)'
+ echo '^fg(\#268bd2)VOL^p(3)^fg()${execi 1 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Vol.sh}^p(3)'

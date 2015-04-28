@@ -1,0 +1,64 @@
+--- config.def.h	2011-12-19 19:02:46.000000000 +0400
++++ mconfig.def.h	2015-04-14 23:50:41.639356165 +0300
+@@ -1,7 +1,8 @@
++#include <X11/XF86keysym.h>
+ /* See LICENSE file for copyright and license details. */
+ 
+ /* appearance */
+-static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
++static const char font[]	    = "-*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*";
+ static const char normbordercolor[] = "#444444";
+ static const char normbgcolor[]     = "#222222";
+ static const char normfgcolor[]     = "#bbbbbb";
+@@ -14,12 +15,17 @@ static const Bool showbar           = Tr
+ static const Bool topbar            = True;     /* False means bottom bar */
+ 
+ /* tagging */
+-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
++static const char *tags[] = { "main", "www", "im", "code", "job", "6", "7", "media", "game" };
+ 
+ static const Rule rules[] = {
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+ 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
++	{ "Google-chrome-stable", NULL,	      NULL,	  1 << 1, False,  0 },
++	{ "Steam",		  NULL,	      NULL,	  1 << 8, False,  0 },
++	{ "Skype",		  NULL,	      NULL,	  1 << 2, False,  0 },
++	{ "Keepassx",		  NULL,	      NULL,	  1 << 6, False,  0 },
++	{ NULL,			  NULL,	      "WeeChat",  1 << 2, False,  0 },
+ };
+ 
+ /* layout(s) */
+@@ -35,7 +41,7 @@ static const Layout layouts[] = {
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+@@ -47,7 +53,12 @@ static const Layout layouts[] = {
+ 
+ /* commands */
+ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+-static const char *termcmd[]  = { "uxterm", NULL };
++static const char *termcmd[]  = { "st", "-e", "screen", NULL };
++/* Sound keys */
++static const char *upvol[] = { "amixer", "-q", "sset", "Master", "3%+", NULL };
++static const char *downvol[] = { "amixer", "-q", "sset", "Master", "3%-", NULL };
++static const char *mute[] = { "amixer", "-q", "sset", "Master", "toggle", NULL };
++
+ 
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
+@@ -84,6 +95,9 @@ static Key keys[] = {
+ 	TAGKEYS(                        XK_8,                      7)
+ 	TAGKEYS(                        XK_9,                      8)
+ 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
++	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol } },
++	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
++	{ 0,              XF86XK_AudioMute, 	   spawn,          {.v = mute } },
+ };
+ 
+ /* button definitions */
