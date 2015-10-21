@@ -14,7 +14,7 @@ short_units yes
  echo -n '^fg(\#268bd2)DISK^p(3)^fg()${diskio sda}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)DL^p(3)^fg()${downspeed eno1}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)UP^p(3)^fg()${upspeed eno1}^p(3):^p(3)'
- echo -ne '^fg(\#268bd2)TEMP^p(3)^fg()${hwmon 0 temp 1}^p(-8)\xc2\xb0C^p(3):^p(3)'
+ echo -ne '^fg(\#268bd2)TEMP^p(3)^fg()${execi 5 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Temp.sh}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)^ca(1,/home/wisetrem/Yandex.Disk/Scripts/Dzen/SysinfoPopup.sh)SYS^ca()^fg()^p(3):^p(3)'
  echo -n '^fg(\#268bd2)/^p(3)^fg()${execi 60 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Space.sh ROOT}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)DS^p(3)^fg()${execi 60 /home/wisetrem/Yandex.Disk/Scripts/Dzen/Space.sh DS}^p(3):^p(3)'

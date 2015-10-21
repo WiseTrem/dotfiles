@@ -10,12 +10,12 @@
  static const char normbordercolor[] = "#444444";
  static const char normbgcolor[]     = "#222222";
  static const char normfgcolor[]     = "#bbbbbb";
-@@ -14,12 +15,17 @@ static const Bool showbar           = Tr
+@@ -14,12 +15,19 @@ static const Bool showbar           = Tr
  static const Bool topbar            = True;     /* False means bottom bar */
  
  /* tagging */
 -static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-+static const char *tags[] = { "main", "www", "im", "code", "job", "6", "7", "media", "game" };
++static const char *tags[] = { "main", "www", "im", "secondary", "apps", "code", "media", "remote", "game" };
  
  static const Rule rules[] = {
  	/* class      instance    title       tags mask     isfloating   monitor */
@@ -24,12 +24,14 @@
 +	{ "Google-chrome-stable", NULL,	      NULL,	  1 << 1, False,  0 },
 +	{ "Steam",		  NULL,	      NULL,	  1 << 8, False,  0 },
 +	{ "Skype",		  NULL,	      NULL,	  1 << 2, False,  0 },
-+	{ "Keepassx",		  NULL,	      NULL,	  1 << 6, False,  0 },
-+	{ NULL,			  NULL,	      "WeeChat",  1 << 2, False,  0 },
++       { "Telegram",		  NULL,       NULL,       1 << 2, False,  0 },
++	{ "Keepassx",		  NULL,	      NULL,	  1 << 4, False,  0 },
++	{ "Hexchat",		  NULL,	      NULL,	  1 << 2, False,  0 },
++	{ "TeamViewer.exe",	  NULL,       NULL,       1 << 7, False,  0 },
  };
  
  /* layout(s) */
-@@ -35,7 +41,7 @@ static const Layout layouts[] = {
+@@ -35,7 +43,7 @@ static const Layout layouts[] = {
  };
  
  /* key definitions */
@@ -38,7 +40,7 @@
  #define TAGKEYS(KEY,TAG) \
  	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
  	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-@@ -47,7 +53,12 @@ static const Layout layouts[] = {
+@@ -47,7 +55,12 @@ static const Layout layouts[] = {
  
  /* commands */
  static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
@@ -52,7 +54,7 @@
  
  static Key keys[] = {
  	/* modifier                     key        function        argument */
-@@ -84,6 +95,9 @@ static Key keys[] = {
+@@ -84,6 +97,9 @@ static Key keys[] = {
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
  	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
