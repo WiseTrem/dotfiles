@@ -27,7 +27,7 @@
 +       { "Telegram",		  NULL,       NULL,       1 << 2, False,  0 },
 +	{ "Keepassx",		  NULL,	      NULL,	  1 << 4, False,  0 },
 +	{ "Hexchat",		  NULL,	      NULL,	  1 << 2, False,  0 },
-+	{ "TeamViewer.exe",	  NULL,       NULL,       1 << 7, False,  0 },
++	{ "Wine",	  	  "TeamViewer.exe", NULL, 1 << 7, False,  0 },
  };
  
  /* layout(s) */

@@ -35,5 +35,7 @@ exec telegram &
 exec steam &
 exec google-chrome-stable &
 exec teamviewer10 &
+exec keepassx &
+exec parcellite &
 
 exec dwm 
