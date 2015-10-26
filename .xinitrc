@@ -29,6 +29,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 conky |/bin/sh |dzen2 -ta r -p -h 20 -y 1062 -e 'button3=;' -fn '-*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*' &
 #(st -t "WeeChat" -e screen weechat-curses) &
 (sudo /opt/teamviewer10/tv_bin/teamviewerd -- -d) &
+(yandex-disk start) &
 exec hexchat &
 exec skype &
 exec telegram &
