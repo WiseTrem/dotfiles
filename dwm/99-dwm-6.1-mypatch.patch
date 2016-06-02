@@ -37,9 +37,9 @@ diff -up dwm-6.1/config.def.h dwm-6.1_p/config.def.h
 +	{ "Skype",		  NULL,	      NULL,	  1 << 2, False, -1 },
 +	{ "Telegram",		  NULL,       NULL,       1 << 2, False, -1 },
 +	{ "Keepassx",		  NULL,	      NULL,	  1 << 4, False, -1 },
-+	{ "Hexchat",		  NULL,	      NULL,	  1 << 2, False, -1 },
++	{ "nixnote2",		  NULL,	      NULL,	  1 << 4, False, -1 },
 +	{ "Wine",	  	  "TeamViewer.exe", NULL, 1 << 7, False, -1 },
-+	{ "Gcstar",		  NULL,	      NULL,	  1 << 6, False, -1 },
++	{ "MediaElch",		  NULL,	      NULL,	  1 << 6, False, -1 },
  };
  
  /* layout(s) */
