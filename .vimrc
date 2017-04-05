@@ -1,8 +1,8 @@
-if has('gui_running')
-set guifont=Nimbus\ Sans\ L/h11
-endif
+"if has('gui_running')
+"set guifont=Nimbus\ Sans\ L/h11
+"endif
 :set number
-:highlight LineNr ctermfg=yellow
+":highlight LineNr ctermfg=yellow
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
@@ -27,8 +27,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'jpalardy/spacehi.vim'
+NeoBundle 'vim-syntastic/syntastic'
 
 call neobundle#end()
 
@@ -40,7 +44,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 "Цвет номеров строк
-highlight LineNr ctermfg=green
+highlight LineNr ctermfg=blue
 highlight LineNr ctermbg=black
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -51,3 +55,17 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 set laststatus=2
 set mouse=a
+set guifont=Terminus
+let g:airline_theme='badwolf'
+set background=dark
+let g:airline_powerline_fonts=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+syntax on
+
+" Непечатные символы
+" Быстрый вызов команды `set list!` - \l
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
