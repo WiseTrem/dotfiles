@@ -1,16 +1,16 @@
-background no
-format_human_readable yes
-out_to_console yes
-total_run_times 0
-update_interval 0.5
-use_spacer right
-cpu_avg_samples 2
-net_avg_samples 2
-default_color white
-pad_percents 1
-short_units yes
+background = false
+format_human_readable = true
+out_to_console = true
+total_run_times = 0
+update_interval = 0.5
+use_spacer = right
+cpu_avg_samples = 2
+net_avg_samples = 2
+default_color = white
+pad_percents = 1
+short_units = true
 
- TEXT
+conky.text = [[
  echo -n '^fg(\#268bd2)DISK^p(3)^fg()${diskio sda}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)DL^p(3)^fg()${downspeed wlp4s0}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)UP^p(3)^fg()${upspeed wlp4s0}^p(3):^p(3)'
@@ -24,3 +24,4 @@ short_units yes
  echo -n '^fg(\#268bd2)MEM^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/Mem.sh}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)SWP^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/SWP.sh}^p(3):^p(3)'
  echo '^fg(\#268bd2)VOL^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/Vol.sh}^p(3)'
+ ]]
