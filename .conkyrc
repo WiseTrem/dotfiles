@@ -23,5 +23,6 @@ conky.text = [[
  echo -n '^fg(\#268bd2)CPU^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/CPU.sh}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)MEM^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/Mem.sh}^p(3):^p(3)'
  echo -n '^fg(\#268bd2)SWP^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/SWP.sh}^p(3):^p(3)'
- echo '^fg(\#268bd2)VOL^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/Vol.sh}^p(3)'
+ echo -n '^fg(\#268bd2)VOL^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/Vol.sh}^p(3):^p(3)'
+ echo '^ca(1, /home/gshepelev/Yandex.Disk/Scripts/Dzen/popup.sh)^fg(\#268bd2)$$^p(3)^fg()${execi 1 /home/gshepelev/Yandex.Disk/Scripts/Dzen/money.sh}^p(3)^ca()'
  ]]

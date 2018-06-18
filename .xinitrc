@@ -32,15 +32,13 @@ sudo rm -f /usr/share/fonts/terminus/ter-114*
 conky |/bin/sh |dzen2 -ta r -p -h 20 -y 1062 -e 'button3=;' -fn '-*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*' &
 conky |/bin/sh |dzen2 -ta r -p -h 20 -y 1182 -e 'button3=;' -fn '-*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*' &
 #(st -t "WeeChat" -e screen weechat-curses) &
-#(sudo /opt/teamviewer10/tv_bin/teamviewerd -- -d) &
 (yandex-disk start) &
-exec hexchat &
 exec skype &
-exec Telegram &
+exec telegram &
 exec steam &
 exec google-chrome-stable &
-exec teamviewer10 &
-exec keepassx &
+exec teamviewer &
+exec keepassxc &
 exec nm-applet &
 exec parcellite &
 exec cbatticon &

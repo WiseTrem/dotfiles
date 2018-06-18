@@ -33,7 +33,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'jpalardy/spacehi.vim'
 NeoBundle 'vim-syntastic/syntastic'
-
+NeoBundle 'avakhov/vim-yaml'
 call neobundle#end()
 
 " Required:
