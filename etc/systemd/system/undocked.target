@@ -1,0 +1,4 @@
+[Unit]
+Description=Laptop is undocked
+Conflicts=docked.target
+Conflicts=docked_at_office.target
